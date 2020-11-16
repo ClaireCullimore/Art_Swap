@@ -1,0 +1,18 @@
+<div class="container  my-5">
+  <div class="col-6">
+  <h1>Add artwork for rent</h1>
+    <%= simple_form_for @artwork do |f| %>
+      <%= f.input :title %>
+      <%= f.input :artist %>
+      <%= f.input :category %>
+      <%= f.input :description %>
+      </br>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+
+</br>
+
+  <%= link_to 'Back', artworks_path %>
+  </div>
+</div>
+
