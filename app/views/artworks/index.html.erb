@@ -1,9 +1,24 @@
-<h1>Artworks to rent</h1>
+<div>
+  <div class="navbar">
 
-  <% @artworks.each do |artwork| %>
-  <p><%= artwork.title %></p>
-  <p><%= artwork.artist %></p>
-  <p><%= artwork.category %></p>
-  <p><%= artwork.description %></p>
-  <% end %>
-
+  </div>
+  <div class="container my-5">
+    <h1 class="h1"><strong>artwork to rent</strong></h1>
+    <div class="cards">
+      <% @artworks.each do |artwork| %>
+      <%= link_to artwork_path(artwork) do %>
+      <div class="card-art">
+        <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
+        <div>
+          <p class="p"><%="#{artwork.title}, #{artwork.artist}" %></p>
+        </div>
+          <div class="price-and-category">
+            <p class="p"><%= artwork.category %></p>
+            <h2 class="h2">£99.99</h2>
+          </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

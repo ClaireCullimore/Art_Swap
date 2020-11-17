@@ -1,0 +1,47 @@
+.card-art {
+  overflow: hidden;
+  background-color: #26233D4D;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 16px;
+  height: 246px;
+  width: 288px;
+  border-radius: 5px;
+}
+
+.card-art:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #FE7F2D!important;
+  transition: 0.2s;
+}
+
+.card-art > img {
+  height: 182px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-art h2 {
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0;
+  padding-right: 16px;
+  padding-top: 16px;
+}
+
+.card-art p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  padding-left: 16px;
+  padding-top: 8px;
+}
+
+.price-and-category {
+  display: flex;
+  justify-content: space-between;
+}
