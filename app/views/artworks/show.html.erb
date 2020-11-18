@@ -36,8 +36,8 @@
   </div>
    <div class="container my-5">
     <div class="cards">
-      <% @artworks.id.each do |artwork| %>
-      <%= link_to artwork_path(artwork) do %>
+      <% @artwork.bookings.each do |art| %>
+      <%= link_to artwork_path(art) do %>
       <div class="card-art">
         <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
         <div>
@@ -49,7 +49,7 @@
           </div>
       </div>
       <% end %>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>
