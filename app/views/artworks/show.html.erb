@@ -1,5 +1,4 @@
-<body>
-  <div class="navbar">
+<div class="navbar">
 </div>
   <div class="container">
   <div class="leftside">
@@ -34,24 +33,24 @@
   <div class="headings">
     <h2>More works by the artist</h2>
   </div>
-   <div class="container my-5">
-    <div class="cards">
-      <% @artwork.bookings.each do |art| %>
-      <%= link_to artwork_path(art) do %>
-      <div class="card-art">
-        <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
-        <div>
-          <p class="p"><%="#{artwork.title}, #{artwork.artist}" %></p>
+</div>
+<div class="container my-5">
+  <div class="cards">
+    <% Artwork.by_artist(@artwork.artist).each do |art| %>
+    <%= link_to artwork_path(art) do %>
+    <div class="card-art">
+      <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
+      <div>
+        <p class="p"><%="#{art.title}, #{art.artist}" %></p>
+      </div>
+      <div class="price-and-category">
+        <p class="p"><%= art.category %></p>
+        <h2 class="h2">£99.99</h2>
         </div>
-          <div class="price-and-category">
-            <p class="p"><%= artwork.category %></p>
-            <h2 class="h2">£99.99</h2>
-          </div>
       </div>
       <% end %>
         <% end %>
     </div>
-  </div>
 </div>
 <div class="container-third"></div>
 <div class="container-second">
@@ -60,6 +59,3 @@
   </div>
 </div>
 <div class="container-third"></div>
-
-
-</body>
