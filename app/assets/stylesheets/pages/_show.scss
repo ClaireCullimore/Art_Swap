@@ -25,6 +25,12 @@ body {
   display: flex;
   justify-content: space-around;
 }
+
+.container-cards {
+  display: flex;
+  padding-left: 30px;
+
+}
 .product-info {
   width: 410px;
   height: 350px;
@@ -35,12 +41,12 @@ body {
 }
 
 .booking-form {
-  width: 500px;
+  width: 450px;
   height: 350px;
   font-size: 14px;
   color: #FCCA46;
   border: 5px solid #FCCA46;
-  border-radius: 10%;
+  border-radius: 5%;
   background-color: #233D4D;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
@@ -54,7 +60,7 @@ body {
 }
 
 .text-input {
-  width: 85%;
+  width: 88%;
 
 }
 
