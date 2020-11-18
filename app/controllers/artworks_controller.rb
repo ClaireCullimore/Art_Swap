@@ -7,6 +7,7 @@ class ArtworksController < ApplicationController
   def show
     @artwork = Artwork.find(params[:id])
     @booking = Booking.new
+    @artworks = Artwork.all.first(3)
   end
 
   def new
@@ -26,6 +27,6 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:title, :artist, :category, :description)
+    params.require(:artwork).permit(:title, :artist, :category, :description, photos: [])
   end
 end

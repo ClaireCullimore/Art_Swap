@@ -10,7 +10,12 @@
       <% @artworks.each do |artwork| %>
       <%= link_to artwork_path(artwork) do %>
       <div class="card-art">
-        <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
+        <% if artwork.photos.attached? %>
+        <%= cl_image_tag artwork.photos.first.key, class: "img" %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
+
         <div>
           <p class="p"><%="#{artwork.title}, #{artwork.artist}" %></p>
         </div>
