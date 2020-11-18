@@ -1,9 +1,14 @@
 <body class="background">
   <div class="navbar">
 
-  </div>
-  <div class="container my-5">
-    <h1 class="h1"><strong>artwork to rent</strong></h1>
+  <div class="container-index">
+    <div class="leftside">
+      <h1 class="h1"><strong>artwork to rent</strong></h1>
+      <h2>Filter</h2>
+      <img class="img" src="https://images.unsplash.com/photo-1526197393380-592c737d3bfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=661&q=80" alt="filter">
+    </div>
+
+    <div class="rightside">
     <div class="cards">
       <% @artworks.each do |artwork| %>
       <%= link_to artwork_path(artwork) do %>
@@ -19,6 +24,7 @@
       </div>
       <% end %>
       <% end %>
+      </div>
     </div>
   </div>
 </body>

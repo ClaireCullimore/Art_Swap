@@ -2,6 +2,16 @@
   background-color: rgba(252, 202, 70, 0.2);
 }
 
+.container-index {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-index h2 {
+  color: #233D4D;
+  padding: 16px;
+}
+
 .h1 {
   padding: 16px;
   color: #FE7F2D;
@@ -14,3 +24,5 @@ color: #233D4D;
 .p {
   color: #233D4D;
 }
+
+
