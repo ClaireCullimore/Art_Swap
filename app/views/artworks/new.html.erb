@@ -6,7 +6,7 @@
       <%= f.input :artist %>
       <%= f.input :category %>
       <%= f.input :description %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
       </br>
       <%= f.button :submit, class: "btn btn-warning" %>
     <% end %>

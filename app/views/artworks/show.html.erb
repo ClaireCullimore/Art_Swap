@@ -1,10 +1,21 @@
 <div class="container">
   <div class="leftside">
-    <img id="img-large" class="img-zoom-container" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=790&q=80" alt="painting">
+    <% if @artwork.photos.attached? %>
+    <%= cl_image_tag @artwork.photos.first.key, height: 500, width: 400, crop: :fill %>
+    <% else %>
+      <img id="img-large" class="img-zoom-container" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=790&q=80" alt="painting">
+    <% end %>
+
     <div class="small-images">
+      <% if @artwork.photos.attached? %>
+        <% @artwork.photos.last(3).each do |photo| %>
+        <%= cl_image_tag photo.key, height: 50, width: 50, crop: :fill %>
+      <% end %>
+    <% else %>
       <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
       <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
       <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+    <% end %>
     </div>
   </div>
   <div class="rightside">
@@ -37,7 +48,11 @@
     <% Artwork.by_artist(@artwork.artist).each do |art| %>
     <%= link_to artwork_path(art) do %>
     <div class="card-art">
-      <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
+      <% if art.photos.attached? %>
+        <%= cl_image_tag art.photos.first.key %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
       <div>
         <p class="p"><%="#{art.title}, #{art.artist}" %></p>
       </div>
@@ -57,15 +72,19 @@
 </div>
 <div class="container-cards">
   <div class="cards">
-      <% @artwork.bookings.each do |art| %>
+      <% @artworks.each do |art| %>
       <%= link_to artwork_path(art) do %>
       <div class="card-art">
-        <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
+        <% if art.photos.attached? %>
+        <%= cl_image_tag art.photos.first.key %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
         <div>
           <p class="p"><%="#{art.title}, #{art.artist}" %></p>
         </div>
           <div class="price-and-category">
-            <p class="p"><%= artwork.category %></p>
+            <p class="p"><%= art.category %></p>
             <h2 class="h2">£99.99</h2>
           </div>
       </div>
