@@ -12,6 +12,33 @@
   </head>
 
   <body>
+     <!-- <div class="nav-container"> -->
+      <div class="wrapper">
+        <nav>
+          <ul class="nav-items">
+            <li>
+              <%= link_to 'Home', root_path%>
+            </li>
+
+            <li>
+              <%= link_to "Contact", root_path%>
+            </li>
+
+            <li>
+              <%= link_to "Art Swap", root_path%>
+            </li>
+
+            <li>
+              <%= link_to "Log in", root_path%>
+            </li>
+
+            <li>
+              <%= link_to "Search", artworks_path%>
+            </li>
+
+          </ul>
+        </nav>
+     </div>
     <p class="notice"><%= notice %></p> <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
