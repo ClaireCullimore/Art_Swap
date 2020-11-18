@@ -5,11 +5,12 @@
     <% else %>
       <img id="img-large" class="img-zoom-container" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=790&q=80" alt="painting">
     <% end %>
+       </br>
 
     <div class="small-images">
       <% if @artwork.photos.attached? %>
         <% @artwork.photos.last(3).each do |photo| %>
-        <%= cl_image_tag photo.key, height: 50, width: 50, crop: :fill %>
+        <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
       <% end %>
     <% else %>
       <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
@@ -37,7 +38,7 @@
     </div>
   </div>
 </div>
-
+</br>
 <div class="container-second">
   <div class="headings">
     <h2>more works by <%= @artwork.artist %></h2>
