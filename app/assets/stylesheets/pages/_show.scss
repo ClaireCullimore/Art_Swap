@@ -1,0 +1,95 @@
+// body {
+//   background-color: #FCCA46;
+//   opacity: 0.1;
+// }
+
+.headings {
+  padding-left: 250px;
+}
+
+.container-second {
+  background-color: #FCCA46;
+  color: #233D4D;
+  padding: 10px;
+}
+
+.container-third {
+  background-color: #FCCA46;
+  height: 400px;
+  opacity: 0.3;
+  color: #233D4D;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+.product-info {
+  width: 410px;
+  height: 350px;
+  margin: 30px;
+  padding: 30px;
+  font-size: 14px;
+  color: #233D4D;
+}
+
+.booking-form {
+  width: 500px;
+  height: 350px;
+  font-size: 14px;
+  color: #FCCA46;
+  border: 5px solid #FCCA46;
+  border-radius: 10%;
+  background-color: #233D4D;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  position: sticky;
+}
+
+#new_booking {
+  display:flex;
+  width: 50px;
+  font-size: 15px;
+}
+
+h1 {
+  color:orange;
+}
+
+#img-large {
+  padding: 30px;
+  width: 500px;
+  height: 600px;
+}
+
+.img {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  height: 130px;
+  object-fit: cover;
+}
+
+.img:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.leftside {
+  display: flex;
+  flex-direction: column;
+  align-item: center;
+}
+
+.rightside {
+  display: flex;
+  flex-direction: column;
+  align-item: center;
+}
+
+.small-images {
+  display: flex;
+  justify-content: space-around;
+}
+
