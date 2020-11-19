@@ -17,7 +17,7 @@
         <div class="wrapper">
           <header>
             <div class="hero-content">
-              <h1>Rent your painting</h1>
+              <h1>Rent your artwork</h1>
               <p>
                 Innovative Art Experience
               </p>
@@ -26,8 +26,18 @@
               </a>
             </div>
           </header>
+          <div>
+            <%= form_tag artworks_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control", placeholder: "Find an artwork"%>
+            <%= submit_tag "Search", class: "btn btn-outline-warning" %>
+            <% end %>
+          </div>
         </div>
     </div>
+
+
     <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
