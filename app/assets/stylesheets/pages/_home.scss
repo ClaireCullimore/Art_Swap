@@ -23,14 +23,25 @@ body {
   // background: #FCCA46;
 }
 
-.btn-outline-warning {
+.search-btn {
   border-radius: 5px;
+  padding: 5px;
 }
 
 .form {
   position: relative;
   right: 100px;
   top:-70px;
+  display: flex;
+  align-items: center;
+  color: rgba(35, 61, 77, 0.8);
+}
+
+.search-form {
+  border-radius: 5px;
+  height: 38px;
+  border-color: #FCCA46;
+  background-color: rgb(253,235,186);
 }
 
 .form-control {
