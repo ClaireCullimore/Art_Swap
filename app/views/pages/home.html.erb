@@ -10,45 +10,47 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
-    </div>
     <div class="header-container">
         <div class="wrapper">
           <header>
             <div class="hero-content">
               <h1>Rent your artwork</h1>
-              <p>
-                Innovative Art Experience
-              </p>
-              <% if user_signed_in? %>
-              <% else  %>
-              <%= link_to "Sign Up",  new_user_registration_path %>
-              <% end   %>
+              <p>Innovative Art Experience</p>
+              <div class="form">
+                <div class="form-input">
+                <%= form_tag artworks_path, method: :get do %>
+                  <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control", class:"search-form", placeholder: "Find an artwork"%>
+                </div>
+                <div class="search-btn">
+                  <%= button_tag type: "submit", class: "btn btn-outline-warning" do %>
+                    <i class="fas fa-search"></i>
+                  <% end %>
+                  <% end %>
+                </div>
+              </div>
+                <% if user_signed_in? %>
+                <% else  %>
+                  <%= link_to "Sign Up",  new_user_registration_path %>
+                <% end  %>
             </div>
           </header>
-          <div>
-            <%= form_tag artworks_path, method: :get do %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control", placeholder: "Find an artwork"%>
-            <%= submit_tag "Search", class: "btn btn-outline-warning" %>
-            <% end %>
-          </div>
         </div>
     </div>
 
 
     <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-  </div>
-</div>
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+        <div class="footer-copyright">
+          This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+        </div>
+    </div>
   </body>
 </html>
