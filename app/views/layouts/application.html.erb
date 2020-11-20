@@ -17,39 +17,26 @@
       <div class="wrapper">
           <nav>
           <ul class="nav-items">
-            <li>
-              <%= link_to 'Home', root_path%>
-            </li>
-
-            <li>
-              <%= link_to "Add an artwork", new_artwork_path%>
-            </li>
-
-            <li>
-              <%= link_to "Art Swap", root_path%>
-            </li>
-            <% if user_signed_in? %>
-            <li>
-              <%= link_to "Log-out", destroy_user_session_path, method: :delete %>
-            </li>
-            <% else %>
-            <li>
-              <%= link_to "Log-in", new_user_session_path%>
-            </li>
-            <% end %>
-
-            <li>
-              <%= link_to "Search", artworks_path%>
-            </li>
-
+            <li><%= link_to 'Art Swap', root_path, id:"artswap"%></li>
+            <li><%= link_to "Hire an artwork", artworks_path%></li>
+            <li><%= link_to "Add an artwork", new_artwork_path%></li>
           </ul>
         </nav>
-
      </div>
-     <div class="nav-prof">
-        <%= link_to "My Profile", profile_path %>
-        <img class="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="Photo">
-    </div>
+
+      <div class="nav-prof">
+        <div>
+          <%= link_to "My Profile", profile_path %>
+          <img class="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="Photo">
+        </div>
+        <div class="session">
+             <% if user_signed_in? %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, id:"log-out" %>
+            <% else %>
+              <%= link_to "Log-in", new_user_session_path%>
+            <% end %>
+        </div>
+      </div>
   </div>
     <p class="notice"><%= notice %></p> <p class="alert"><%= alert %></p>
     <%= yield %>

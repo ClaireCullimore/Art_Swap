@@ -10,6 +10,14 @@ body {
   position: relative;
 }
 
+.bgimg-1 {
+    background-image: url("https://media.architecturaldigest.com/photos/58c9948f3ebe3b50fd11e035/16:9/w_2560%2Cc_limit/0513-AD-SEGU-09.jpg");
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 // .nav-container {
 //   background: #FCCA46;
 //   height: 145px;
@@ -22,21 +30,44 @@ body {
   margin: 0 auto;
   // background: #FCCA46;
   display: flex;
-  justify-content: space-between;
-
+  text-align: center;
 }
 
 .nav-profile {
   display: flex;
+  text-align: center;
 }
 
 .nav-profile {
-   color: rgba(35, 61, 77, 0.8);
+  color: rgba(35, 61, 77, 0.8);
   font-size: 20px;
   font-family: Poppins, sans-serif;
   font-weight: bold;
   text-decoration: none;
   margin-right: 5px;
+  padding-top: 20px;
+  line-height: 24px;
+}
+
+.nav-profile a {
+  color: rgba(35, 61, 77, 0.8);
+}
+
+.session {
+  text-decoration: none;
+  color: rgba(35, 61, 77, 0.8);
+  padding-right: 95px;
+  padding-top: 0px;
+  font-size: 20px;
+}
+
+.session a {
+  color: rgba(35, 61, 77, 0.8);
+}
+
+#artswap {
+  font-size: 30px;
+  line-height: 30px;
 }
 
 .search-btn {
@@ -46,8 +77,8 @@ body {
 
 .form {
   position: relative;
-  right: 100px;
-  top:-70px;
+  right: 69px;
+  top: -100px;
   display: flex;
   align-items: center;
   color: rgba(35, 61, 77, 0.8);
@@ -56,8 +87,8 @@ body {
 .search-form {
   border-radius: 5px;
   height: 39px;
-  border-color: rgb(233,144,60);
-  background-color: rgb(253,235,186);
+  border-color: rgba(35, 61, 77, 0.8);
+  background-color: #FFFFF1;
   outline: none;
 }
 
@@ -100,6 +131,7 @@ nav ul {
   height: 100vh;
   display: flex;
   align-items: center;
+  opacity: 1;
 }
 
 header {
@@ -116,6 +148,7 @@ header h1 {
  position: relative;
  right: 100px;
  top:-80px;
+ text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 header p {
@@ -127,6 +160,7 @@ header p {
  right: 100px;
  top:-70px;
  margin-bottom: 48px;
+ text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 header a {
