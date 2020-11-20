@@ -13,24 +13,30 @@
 
   <body>
      <!-- <div class="nav-container"> -->
+    <div class="nav-profile">
       <div class="wrapper">
-        <nav>
+          <nav>
           <ul class="nav-items">
             <li>
               <%= link_to 'Home', root_path%>
             </li>
 
             <li>
-              <%= link_to "Contact", root_path%>
+              <%= link_to "Add an artwork", new_artwork_path%>
             </li>
 
             <li>
               <%= link_to "Art Swap", root_path%>
             </li>
-
+            <% if user_signed_in? %>
             <li>
-              <%= link_to "Log in", root_path%>
+              <%= link_to "Log-out", destroy_user_session_path, method: :delete %>
             </li>
+            <% else %>
+            <li>
+              <%= link_to "Log-in", new_user_session_path%>
+            </li>
+            <% end %>
 
             <li>
               <%= link_to "Search", artworks_path%>
@@ -38,7 +44,13 @@
 
           </ul>
         </nav>
+
      </div>
+     <div class="nav-prof">
+        <%= link_to "My Profile", profile_path %>
+        <img class="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="Photo">
+    </div>
+  </div>
     <p class="notice"><%= notice %></p> <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>

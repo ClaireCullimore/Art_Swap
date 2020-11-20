@@ -1,10 +1,22 @@
 <div class="container">
   <div class="leftside">
-    <img id="img-large" class="img-zoom-container" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=790&q=80" alt="painting">
+    <% if @artwork.photos.attached? %>
+    <%= cl_image_tag @artwork.photos.first.key, height: 500, width: 400, crop: :fill %>
+    <% else %>
+      <img id="img-large" class="img-zoom-container" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=790&q=80" alt="painting">
+    <% end %>
+       </br>
+
     <div class="small-images">
+      <% if @artwork.photos.attached? %>
+        <% @artwork.photos.last(3).each do |photo| %>
+        <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
+      <% end %>
+    <% else %>
       <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
       <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
       <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+    <% end %>
     </div>
   </div>
   <div class="rightside">
@@ -13,31 +25,40 @@
         <h2><%= @artwork.artist %></h2>
         <p><%= @artwork.category %></p>
         <p><%= @artwork.description %></p>
+        <p><%= @artwork.price %> per 24/hours</p>
+        <p><%= @artwork.location %></p>
     </div>
     <div class="booking-form">
-      <div class="text-input">
+        <h2>reserve now</h2>
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
+      <div class="text-input">
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-      </div>
-    </br>
       <div> <%= f.submit "Book your Art Swap", class: "btn btn-warning" %></div>
+      </div>
+        <p class = "price-label">£<%= @artwork.price%> per 24/hours</p>
+        <p class = "price-label">Total: £<%= @artwork.price%> per 24/hours</p>
       <% end %>
+      </br>
     </div>
   </div>
 </div>
-
+</br>
 <div class="container-second">
   <div class="headings">
-    <h2>More works by the artist</h2>
+    <h2>more works by <%= @artwork.artist %></h2>
   </div>
 </div>
-<div class="container my-5">
+<div class="container-cards">
   <div class="cards">
     <% Artwork.by_artist(@artwork.artist).each do |art| %>
     <%= link_to artwork_path(art) do %>
     <div class="card-art">
-      <img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80" alt="painting">
+      <% if art.photos.attached? %>
+        <%= cl_image_tag art.photos.first.key %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
       <div>
         <p class="p"><%="#{art.title}, #{art.artist}" %></p>
       </div>
@@ -50,13 +71,33 @@
         <% end %>
     </div>
 </div>
-<div class="container-third"></div>
 <div class="container-second">
   <div class="headings">
-  <h2>More to Art Swap</h2>
+  <h2>more to Art Swap</h2>
   </div>
 </div>
-<div class="container-third"></div>
+<div class="container-cards">
+  <div class="cards">
+      <% @artworks.each do |art| %>
+      <%= link_to artwork_path(art) do %>
+      <div class="card-art">
+        <% if art.photos.attached? %>
+        <%= cl_image_tag art.photos.first.key %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
+        <div>
+          <p class="p"><%="#{art.title}, #{art.artist}" %></p>
+        </div>
+          <div class="price-and-category">
+            <p class="p"><%= art.category %></p>
+            <h2 class="h2">£99.99</h2>
+          </div>
+      </div>
+      <% end %>
+      <% end %>
+      </div>
+    </div>
 
 <div class="footer">
   <div class="footer-links">
