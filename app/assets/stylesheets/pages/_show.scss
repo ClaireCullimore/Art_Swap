@@ -44,10 +44,10 @@ body {
   width: 300px;
   height: 400px;
   font-size: 14px;
-  color: #FCCA46;
+  color: #233D4D;
   border: 5px solid #FCCA46;
   border-radius: 5%;
-  background-color: #233D4D;
+  background-color: white;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
   position: fixed;
@@ -63,17 +63,13 @@ body {
 }
 
 #new_booking {
-  display:flex;
-  width: 50px;
   font-size: 15px;
 }
 
 .product-info > h1 {
  color:#FE7F2d;
- text-align: none;
+ text-align: left;
 }
-
-
 
 #img-large {
   padding: 30px;
@@ -119,3 +115,4 @@ body {
   font-size: 16px;
   display:flex;
 }
+
