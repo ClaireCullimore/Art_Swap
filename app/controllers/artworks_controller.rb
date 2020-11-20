@@ -8,8 +8,8 @@ class ArtworksController < ApplicationController
       "
       @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
     else
-    @artworks = Artwork.all
-  end
+      @artworks = Artwork.all
+    end
   end
 
   def show
