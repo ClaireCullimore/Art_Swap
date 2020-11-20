@@ -1,4 +1,22 @@
 
+ <h1 class="h1"><strong>artwork to rent</strong></h1>
+
+
+ <div class="filter">
+  <%= form_tag artworks_path, method: :get do %>
+  <%= select_tag "artworks", options_for_select(Artwork.pluck(:category), "oil") %>
+  <%= number_field_tag "min_price", placeholder: 0 %>
+  <%= number_field_tag "max_price", placeholder: 10000 %>
+  <%= hidden_field_tag "query", params[:query]%>
+  <%= submit_tag "Search", class: "btn btn-outline-warning" %>
+    <% end %>
+</div>
+
+
+ <div class="container-index">
+    <div class="leftside">
+
+
     <h1 class="h1"><strong>artwork to rent</strong></h1>
     <div class="filter">
 
@@ -25,6 +43,7 @@
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+
     </div>
 
     <div class="col-7">

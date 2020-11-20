@@ -37,5 +37,11 @@ color: #233D4D;
 .filter {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+  height: 39px;
+  border-color: rgb(233,144,60);
+  outline: none;
 }
 
