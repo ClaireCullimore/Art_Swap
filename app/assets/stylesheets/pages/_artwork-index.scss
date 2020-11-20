@@ -38,10 +38,32 @@ color: #233D4D;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 5px;
+  align-items: center;
+  border-radius: 2px;
   padding: 5px;
   height: 39px;
   border-color: rgb(233,144,60);
-  outline: none;
+  color: #233D4D;
+}
+
+#artworks {
+  border-radius: 2px;
+  height: 39px;
+  background-color: #FFFFFFF1;
+  border-outline: none;
+}
+
+#min_price {
+  border-radius: 2px;
+  height: 39px;
+  background-color: #FFFFFFF1;
+  border-outline: none;
+}
+
+#max_price {
+  border-radius: 2px;
+  height: 39px;
+  background-color: #FFFFFFF1;
+  border-outline: none;
 }
 
