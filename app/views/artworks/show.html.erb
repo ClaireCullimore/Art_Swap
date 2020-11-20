@@ -25,18 +25,21 @@
         <h2><%= @artwork.artist %></h2>
         <p><%= @artwork.category %></p>
         <p><%= @artwork.description %></p>
-        <p><%= @artwork.price %></p>
+        <p><%= @artwork.price %> per 24/hours</p>
         <p><%= @artwork.location %></p>
     </div>
     <div class="booking-form">
-      <div class="text-input">
+        <h2>reserve now</h2>
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
+      <div class="text-input">
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-      </div>
-    </br>
       <div> <%= f.submit "Book your Art Swap", class: "btn btn-warning" %></div>
+      </div>
+        <p class = "price-label">£<%= @artwork.price%> per 24/hours</p>
+        <p class = "price-label">Total: £<%= @artwork.price%> per 24/hours</p>
       <% end %>
+      </br>
     </div>
   </div>
 </div>

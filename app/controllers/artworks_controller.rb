@@ -7,6 +7,10 @@ class ArtworksController < ApplicationController
       artworks.title @@ :query \
       OR artworks.artist @@ :query \
       "
+      
+      @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @artworks = Artwork.all
       @artworks = @artworks.where(sql_query, query: "%#{params[:query]}%")
     end
     if params[:artworks].present?

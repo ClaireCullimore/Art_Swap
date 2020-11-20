@@ -21,6 +21,22 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   // background: #FCCA46;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.nav-profile {
+  display: flex;
+}
+
+.nav-profile {
+   color: rgba(35, 61, 77, 0.8);
+  font-size: 20px;
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 5px;
 }
 
 .search-btn {

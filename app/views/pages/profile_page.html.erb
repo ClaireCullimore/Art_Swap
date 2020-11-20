@@ -1,0 +1,51 @@
+<div class="profile-title"></div>
+<h1>Account Page</h1>
+<div>
+</div>
+  <div class="large-card">
+    <div class="left-card">
+      <img class="avatar-large" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="Photo">
+      <h3>Name: <%= current_user.first_name %> <%= current_user.last_name %></h3>
+      <h3>Email: <%= current_user.email %></h3>
+    </div>
+    <div class="right-card">
+      <div class="top-right-card">
+        <h2>Your Art Bookings</h2>
+        <% current_user.bookings.each do |booking| %>
+        <div class="booking-list">
+          <h3><%= booking.artwork.title %>, <%= booking.artwork.artist %></h3>
+          <h4><%= booking.artwork.category %></h4>
+          <h4><%= booking.start_date %> - <%= booking.end_date %></h4>
+          <h4>£<%= booking.artwork.price %>,<%= booking.artwork.location %></h4>
+        </div>
+        <% end %>
+
+      </div>
+    </br>
+      <h2>Your Rented Art</h2>
+       <div class="cards">
+      <% current_user.artworks.each do |art| %>
+      <%= link_to artwork_path(art) do %>
+      <div class="card-art">
+        <% if art.photos.attached? %>
+        <%= cl_image_tag art.photos.first.key %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
+        <div>
+          <p class="p"><%="#{art.title}, #{art.artist}" %></p>
+        </div>
+          <div class="price-and-category">
+            <p class="p"><%= art.category %></p>
+            <h2 class="h2">£99.99</h2>
+          </div>
+      </div>
+      <% end %>
+      <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<%= current_user.email %>
+
