@@ -40,8 +40,15 @@ color: #233D4D;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
-  height: 39px;
   border-color: rgb(233,144,60);
   outline: none;
 }
 
+#artworks {
+  height: 32px;
+}
+
+.mapboxgl-map {
+      height: 100%;
+      width: 100%;
+    }
