@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!(email: "abc@gmail.com", password: "1234567")
+user = User.create!(email: "abcd@gmail.com", password: "1234567")
 
-Artwork.create!(user: user, title: "2 Dancers", category: "oil painting", artist: "Picasso", description: "Sharp " )
-Artwork.create!(user: user, title: "The Raft of Medusa", category: "oil painting", artist: "Gericault", description: "held at the Louvre Museum - life size")
-Artwork.create!(user: user, title: "Starry Night", category: "oil painting", artist: "Van Gogh", description: "beautfil evening ")
+Artwork.create!(user: user, title: "2 Dancers", category: "oil painting", artist: "Picasso", description: "Sharp ", price: 99, location: "london" )
+Artwork.create!(user: user, title: "The Raft of Medusa", category: "oil painting", artist: "Gericault", description: "held at the Louvre Museum - life size", price: 99, location: "london")
+Artwork.create!(user: user, title: "Starry Night", category: "oil painting", artist: "Van Gogh", description: "beautfil evening", price: 99, location: "london")
 

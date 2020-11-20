@@ -25,17 +25,15 @@ require("channels")
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  import { initSweetalert } from '../plugins/init_sweetalert';
+  initMapbox();
+})
+// import { initSelect2 } from '../components/init_select2';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "A nice alert",
-  text: "This is a great alert, isn't it?",
-  icon: "success"
-});
-});
+
