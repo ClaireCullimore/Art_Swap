@@ -1,21 +1,21 @@
-<div class="container  my-5">
-  <div class="col-6">
-  <h1>Add artwork for rent</h1>
-    <%= simple_form_for @artwork do |f| %>
-      <%= f.input :title %>
-      <%= f.input :artist %>
-      <%= f.input :category %>
-      <%= f.input :description %>
-      <%= f.input :price %>
-      <%= f.input :location %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
-      </br>
-      <%= f.button :submit, class: "btn btn-warning" %>
-    <% end %>
-
-</br>
-
-  <%= link_to 'Back', artworks_path %>
+<div class = "form-image">
+  <div class="container  my-5">
+    <div class="col-6">
+    <h1>Add artwork for rent</h1>
+      <%= simple_form_for @artwork do |f| %>
+        <%= f.input :title %>
+        <%= f.input :artist %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :location %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+        </br>
+        <%= f.button :submit, class: "btn btn-warning" %>
+      <% end %>
+    </br>
+    <%= link_to 'Back', artworks_path, class:"btn btn-warning" %>
+    </div>
   </div>
 </div>
 

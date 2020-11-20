@@ -25,8 +25,8 @@
         <h2><%= @artwork.artist %></h2>
         <p><%= @artwork.category %></p>
         <p><%= @artwork.description %></p>
-        <p><%= @artwork.price %> per 24/hours</p>
-        <p><%= @artwork.location %></p>
+        <p>£<%= @artwork.price %> per day</p>
+        <p>Current Location: <%= @artwork.location %></p>
     </div>
     <div class="booking-form">
       <h2>reserve now</h2>
@@ -36,8 +36,8 @@
           <%= f.input :end_date, as: :date, html5: true %>
         </div>
         <div class="prices">
-          <p class = "price-label">£<%= @artwork.price%> per 24/hours</p>
-          <p class = "price-label">Total: £<%= @artwork.price%> per 24/hours</p>
+          <p class = "price-label">£<%= @artwork.price%> per day</p>
+          <p class = "price-label">Total: £<%= @artwork.price%> per day</p>
         </div>
           <div id="sweet-alert-demo"> <%= f.submit "Book your Art Swap", class: "btn btn-warning" %></div>
       <% end %>
@@ -66,7 +66,7 @@
       </div>
       <div class="price-and-category">
         <p class="p"><%= art.category %></p>
-        <h2 class="h2">£99.99</h2>
+        <h2 class="h2">£<%= art.price %></h2>
         </div>
       </div>
       <% end %>
@@ -93,7 +93,7 @@
         </div>
           <div class="price-and-category">
             <p class="p"><%= art.category %></p>
-            <h2 class="h2">£99.99</h2>
+            <h2 class="h2">£ <%= art.price %> </h2>
           </div>
       </div>
       <% end %>
