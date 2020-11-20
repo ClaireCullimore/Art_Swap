@@ -1,4 +1,4 @@
-  <div class="container-index">
+    <h1 class="h1"><strong>artwork to rent</strong></h1>
     <div class="filter">
       <%= form_tag artworks_path, method: :get do %>
       <%= select_tag "artworks", options_for_select(Artwork.pluck(:category), "oil") %>
@@ -8,9 +8,8 @@
       <%= submit_tag "Search", class: "btn btn-warning" %>
       <% end %>
     </div>
-
+    <div class="container-index">
     <div class="leftside">
-      <h1 class="h1"><strong>artwork to rent</strong></h1>
     </div>
 
     <div class="rightside">
