@@ -1,5 +1,5 @@
 .large-card {
-  color: #FCCA46;
+  color: #FE7F2D;
   border-radius: 5%;
   text-align: center;
   margin-left: 100px;
@@ -13,11 +13,12 @@
 
 .left-card {
   border: 2px solid #FCCA46;
-  background-color: #233D4D;
+  background-color: white;
   width: 300px;
   height: 300px;
-  border-radius: 5%;
+  border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  margin-top: 78px;
 
 }
 
@@ -30,9 +31,12 @@
 
 .booking-list {
   border: 2px solid #FCCA46;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
+  color:#233D4D;
+  background-color: white;
+  width: 500px;
+  height: 400px;
+  margin: 10px;
 
 }
 
@@ -49,21 +53,34 @@ h4 {
   font-size: 14px;
   display:flex;
   margin-left: 20px;
+  color:#233D4D;
+  font-size: 18px;
 }
 
-.top-right-card {
-  width: 500px;
-  height: 350px;
-  border-radius: 10%;
-  margin-bottom: 20px;
-  color: #233D4D;
+h5 {
+color: #FE7F2D;
+font-size: 15px;
 }
 
-.bottom-right-card {
-  border: 2px solid #233D4D;
-  width: 500px;
-  height: 350px;
-  border-radius: 2%;
+#nav-tab {
   color: #233D4D;
+  border-radius: 5px;
+  width: 100%;
+  .nav-link {
+    flex-grow: 1;
+  }
+}
 
+#nav-tabContent {
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.right-card {
+  width: 500px;
 }
