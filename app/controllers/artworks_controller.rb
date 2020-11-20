@@ -7,7 +7,7 @@ class ArtworksController < ApplicationController
       artworks.title @@ :query \
       OR artworks.artist @@ :query \
       "
-      
+
       @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
     else
       @artworks = Artwork.all
@@ -18,6 +18,13 @@ class ArtworksController < ApplicationController
     end
     if params[:min_price].present? && params[:max_price].present?
       @artworks = @artworks.where("price > ? AND price < ?", params[:min_price].to_i, params[:max_price].to_i)
+    end
+
+    @markers = @artworks.geocoded.map do |artwork|
+      {
+        lat: artwork.latitude,
+        lng: artwork.longitude
+      }
     end
   end
 
