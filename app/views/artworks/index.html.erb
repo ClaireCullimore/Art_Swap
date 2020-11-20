@@ -1,8 +1,16 @@
   <div class="container-index">
+    <div class="filter">
+      <%= form_tag artworks_path, method: :get do %>
+      <%= select_tag "artworks", options_for_select(Artwork.pluck(:category), "oil") %>
+      <%= number_field_tag "min_price" %>
+      <%= number_field_tag "max_price" %>
+      <%= hidden_field_tag "query", params[:query]%>
+      <%= submit_tag "Search", class: "btn btn-warning" %>
+      <% end %>
+    </div>
+
     <div class="leftside">
       <h1 class="h1"><strong>artwork to rent</strong></h1>
-      <h2>Filter</h2>
-      <img class="img" src="https://images.unsplash.com/photo-1526197393380-592c737d3bfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=661&q=80" alt="filter">
     </div>
 
     <div class="rightside">
